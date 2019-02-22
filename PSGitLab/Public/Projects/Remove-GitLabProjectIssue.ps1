@@ -50,7 +50,7 @@ function Remove-GitlabProjectIssue {
           Method = 'DELETE'
         }
   
-        QueryGitLabAPI -Request $Request -NoResult
+        $QueryResult = QueryGitLabAPI -Request $Request
       }
     }
     catch {

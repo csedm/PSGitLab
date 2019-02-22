@@ -1,5 +1,5 @@
 Function QueryGitLabAPI {
-    [cmdletbinding(DefaultParameterSetName = "HasResults")]
+    [cmdletbinding()]
     param(
       [Parameter(Mandatory = $true,
         HelpMessage = 'A hash table used for splatting against Invoke-WebRequest.',
@@ -9,8 +9,7 @@ Function QueryGitLabAPI {
       
       [Parameter(Mandatory = $false,
         HelpMessage = 'Provide a datatype for the returing objects.',
-        Position = 1,
-        ParameterSetName = 'HasResults')]
+        Position = 1)]
       [ValidateNotNullOrEmpty()]
       [string]$ObjectType,
       
@@ -20,8 +19,7 @@ Function QueryGitLabAPI {
       [ValidateNotNullOrEmpty()]
       [string]$Version = 'v4',
   
-      [Parameter(HelpMessage = 'API query does not return content',
-        ParameterSetName = 'NoResults')]
+      [Parameter(HelpMessage = 'API query does not return content')]
       [switch]$NoResult
     )
       
@@ -92,5 +90,4 @@ Function QueryGitLabAPI {
         Write-Output $Result
       }
     }
-  
   }

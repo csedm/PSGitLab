@@ -622,10 +622,10 @@
                 <PropertyName>state</PropertyName>
               </ListItem>
               <ListItem>
-                <PropertyName>id</PropertyName>
+                <PropertyName>iid</PropertyName>
               </ListItem>
               <ListItem>
-                <PropertyName>assignee</PropertyName>
+                <PropertyName>assignees</PropertyName>
               </ListItem>
               <ListItem>
                 <PropertyName>created_at</PropertyName>

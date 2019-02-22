@@ -26,13 +26,12 @@ Function QueryGitLabAPI {
 
     $Domain = $GitLabConfig.Domain
     if ( $IsWindows -or ( [version]$PSVersionTable.PSVersion -lt [version]"5.99.0" ) ) {
-      $Token = DecryptString -Token $GitLabConfig.Token
-    }
-    elseif ( $IsLinux -or $IsMacOS ) {
-      $Token = $GitLabConfig.Token
+        $Token = DecryptString -Token $GitLabConfig.Token
+    } elseif ( $IsLinux -or $IsMacOS ) {
+        $Token = $GitLabConfig.Token
     }
     $Headers = @{
-      'PRIVATE-TOKEN' = $Token;
+        'PRIVATE-TOKEN' = $Token;
     }
 
     $Request.Add('Headers',$Headers)
@@ -47,7 +46,7 @@ Function QueryGitLabAPI {
         }
     }
     catch {
-      Write-Warning -Message 'Adding TLS 1.2 to supported security protocols was unsuccessful.'
+        Write-Warning -Message 'Adding TLS 1.2 to supported security protocols was unsuccessful.'
     }
 
     try  {
@@ -88,5 +87,4 @@ Function QueryGitLabAPI {
         $Result.pstypenames.insert(0,$ObjectType)
         Write-Output $Result
       }
-    }
   }

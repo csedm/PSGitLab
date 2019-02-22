@@ -9,25 +9,25 @@
 @{
 
     # Script module or binary module file associated with this manifest.
-    RootModule        = 'PSGitLab.psm1'
+    RootModule = 'PSGitLab.psm1'
   
     # Version number of this module.
-    ModuleVersion     = '3.0.0'
+    ModuleVersion = '3.0.1'
   
     # ID used to uniquely identify this module
-    GUID              = 'f844db87-fda8-403b-a7da-bdc00a3f5a58'
+    GUID = 'f844db87-fda8-403b-a7da-bdc00a3f5a58'
   
     # Author of this module
-    Author            = 'Nicholas M. Getchell, Leonhard Schick, and Brooks Collins'
+    Author = 'Nicholas M. Getchell, Leonhard Schick, and Brooks Collins, and Wojciech Sciesinski'
   
     # Company or vendor of this module
     # CompanyName = 'Unknown'
   
     # Copyright statement for this module
-    Copyright         = '(c) 2018 PSGitLab. All rights reserved.'
+    Copyright = '(c) 2018 PSGitLab. All rights reserved.'
   
     # Description of the functionality provided by this module
-    Description       = 'GitLab API accessable from the Windows PowerShell console'
+    Description = 'GitLab API accessable from the Windows PowerShell console'
   
     # Minimum version of the Windows PowerShell engine required by this module
     # PowerShellVersion = ''
@@ -72,6 +72,7 @@
       'Close-GitLabMergeRequest',
       'Close-GitLabMilestone',
       'Get-GitLabCommitStats',
+      'Get-GitLabGroup',
       'Get-GitLabIssue',
       'Get-GitLabMergeRequest',
       'Get-GitLabMilestone',
@@ -152,7 +153,7 @@
     # FileList = @()
   
     # Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.
-    PrivateData       = @{
+    PrivateData = @{
   
       PSData = @{
   
@@ -176,19 +177,20 @@
   
         # A URL to an icon representing this module.
         # IconUri = ''
-  
-        # ReleaseNotes of this module
-        # ReleaseNotes = ''
-  
-      } # End of PSData hashtable
-  
-    } # End of PrivateData hashtable
-  
-    # HelpInfo URI of this module
-    # HelpInfoURI = ''
-  
-    # Default prefix for commands exported from this module. Override the default prefix using Import-Module -Prefix.
-    # DefaultCommandPrefix = ''
-  
-  }
-  
+
+        # ReleaseNotes of this module 
+        # Generate list 
+        # # git log v2.7.1...master --pretty=format:"%h - %an : %s"
+        ReleaseNotes = 'https://github.com/ngetchell/PSGitLab/blob/master/ReleaseNotes.md'
+
+    } # End of PSData hashtable
+
+} # End of PrivateData hashtable
+
+# HelpInfo URI of this module
+# HelpInfoURI = ''
+
+# Default prefix for commands exported from this module. Override the default prefix using Import-Module -Prefix.
+# DefaultCommandPrefix = ''
+
+}
